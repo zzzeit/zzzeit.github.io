@@ -153,7 +153,7 @@ class Item {
         img.style.left = "0";
 
         const number = document.createElement("p");
-        number.innerText = `#${this.pity}: ${this.formattedName}`;
+        number.innerText = `#${++this.pity}: ${this.formattedName}`;
         number.style.position = "absolute";
         number.style.bottom = "0";
         number.style.left = "110px";
