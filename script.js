@@ -36,7 +36,7 @@ function pull() {
         a_guaranteed++;
         if (a_guaranteed >= 10) {
             console.log("A guaranteed");
-            a_guaranteed = 0;
+            aWin();
             continue;
         }
 
@@ -47,7 +47,6 @@ function pull() {
             pityReset();
         } else if (rand < s_character + a_character) {
             aWin();
-            a_guaranteed = 0;
         } else {
             bWin();
         }
@@ -96,6 +95,7 @@ function sWin() {
 function aWin() {
     console.log("A")
     pullItem("a", "characters");
+    a_guaranteed = 0;
 }
 
 function bWin() {
