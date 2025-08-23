@@ -13,7 +13,9 @@
     overflow-y: scroll;
 }
 
-
+h1,p {
+    color: white;
+}
 
 .pullImage {
     width: 300px;

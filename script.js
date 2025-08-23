@@ -60,7 +60,7 @@ function pull() {
     updateStats();
 }
 
-function pullItem(rarity, type) {
+function pullItem(rarity, type, win=true) {
     if (!data) {
         console.error("Data not loaded yet");
         return;
@@ -68,8 +68,13 @@ function pullItem(rarity, type) {
     
     let item = null;
     let name = null;
+    let key;
     
-    const key = `${rarity}_${type}`;
+    if (win){
+        key = `${rarity}_${type}_win`;
+    } else if (!win) {
+        key = `${rarity}_${type}_lose`;
+    }
     if (data[key] && data[key].length > 0) {
         name = data[key][Math.floor(Math.random() * data[key].length)];
         item = new Item(name, type.slice(0, -1));
@@ -88,24 +93,24 @@ function clearHistory() {
 function sWin() {
     if (Math.random() < 0.5) {
         console.log("S winner");
-        pullItem("s", "characters");
+        pullItem("s", "characters", true);
         wins++;
     } else {
         console.log("S Loser");
-        pullItem("s", "characters");
+        pullItem("s", "characters", false);
     }
     totalSPulls++;
 }
 
 function aWin() {
     console.log("A")
-    pullItem("a", "characters");
+    pullItem("a", "characters", true);
     a_guaranteed = 0;
 }
 
 function bWin() {
     console.log("B")
-    pullItem("b", "weapons");
+    pullItem("b", "weapons", true);
 }
 
 function pityReset() {

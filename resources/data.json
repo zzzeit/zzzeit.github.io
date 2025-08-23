@@ -1,15 +1,17 @@
 {
-    "s_characters": [
+    "s_characters_win": [
+        "s_alice",
+        "s_yuzuha"
+    ],
+    "s_characters_lose": [
         "s_rina",
         "s_lycoan",
         "s_koleda",
         "s_soldier_11",
         "s_grace",
-        "s_nekomata",
-        "s_alice",
-        "s_yuzuha"
+        "s_nekomata"
     ],
-    "a_characters": [
+    "a_characters_win": [
         "a_anby",
         "a_anton",
         "a_ben",
@@ -43,7 +45,7 @@
         "a_electro_lip_gloss",
         "a_gilded_blossom"
     ],
-    "b_weapons": [
+    "b_weapons_win": [
         "b_cinder_cobalt",
         "b_identity_base",
         "b_identity_inflection",
