@@ -21,7 +21,6 @@ let s_guaranteed = getCookie("s_guaranteed") || 0;
 let a_guaranteed = getCookie("a_guaranteed") || 0;
 
 function pull() {
-    updateCookies();
     clearHistory();
     console.log("pulling");
     for (let i = 0; i < 10; i++) {
@@ -154,7 +153,7 @@ class Item {
         img.style.left = "0";
 
         const number = document.createElement("p");
-        number.innerText = `#${this.pity + 1}: ${this.formattedName}`;
+        number.innerText = `#${this.pity}: ${this.formattedName}`;
         number.style.position = "absolute";
         number.style.bottom = "0";
         number.style.left = "110px";
