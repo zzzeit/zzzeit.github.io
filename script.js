@@ -132,6 +132,8 @@ function updateStats() {
     document.getElementById("pity").innerText = `Pity: ${pity}`;
     const winPercent = totalSPulls > 0 ? ((wins / totalSPulls) * 100).toFixed(2) : "0.00";
     document.getElementById("wins").innerText = `Wins: ${winPercent}%`;
+    document.getElementById("a_guaranteed").innerText = `Pulls until A guaranteed: ${10-a_guaranteed}`;
+    document.getElementById("s_guaranteed").innerText = `Pulls until S guaranteed: ${90-s_guaranteed}`;
 }
 
 
