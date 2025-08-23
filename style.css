@@ -11,6 +11,7 @@
 
 .history {
     overflow-y: scroll;
+    height: 700px;
 }
 
 h1,p {
