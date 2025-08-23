@@ -1,0 +1,34 @@
+.uibox {
+    background-color: rgba(0, 24, 54, 0.178);
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.history {
+    overflow-y: scroll;
+}
+
+h1, p {
+    background-color: rgba(137, 43, 226, 0.295);
+}
+
+.pullImage {
+    width: 300px;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.pullImage:hover {
+    transform-origin: bottom;
+    transform: scale(1.1);
+}

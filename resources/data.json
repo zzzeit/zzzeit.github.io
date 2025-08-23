@@ -1,0 +1,53 @@
+{
+    "s_characters": [
+        "s_rina",
+        "s_lycoan",
+        "s_koleda",
+        "s_soldier_11",
+        "s_grace",
+        "s_nekomata",
+        "s_alice",
+        "s_yuzuha"
+    ],
+    "a_characters": [
+        "a_anby",
+        "a_anton",
+        "a_ben",
+        "a_billy",
+        "a_corin",
+        "a_lucy",
+        "a_nicole",
+        "a_pan_yinhu",
+        "a_piper",
+        "a_pulchra",
+        "a_seth",
+        "a_soukaku"
+    ],
+    "s_weapons": [
+        "s_fusion_compiler",
+        "s_hellfire_gears",
+        "s_steel_cushion",
+        "s_the_brimstone",
+        "s_the_restrained",
+        "s_weeping_cradle",
+        "s_practiced_perfection"
+    ],
+    "a_weapons": [
+        "a_bashful_demon",
+        "a_big_cylinder",
+        "a_box_cutter",
+        "a_bunny_band",
+        "a_cannon_rotor",
+        "a_demara_battery_mark_2",
+        "a_drill_rig_red_axis",
+        "a_electro_lip_gloss",
+        "a_gilded_blossom"
+    ],
+    "b_weapons": [
+        "b_cinder_cobalt",
+        "b_identity_base",
+        "b_identity_inflection",
+        "b_lunar_decrescent",
+        "b_lunar_noviluna"
+    ]
+}
