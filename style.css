@@ -13,9 +13,7 @@
     overflow-y: scroll;
 }
 
-h1, p {
-    background-color: rgba(137, 43, 226, 0.295);
-}
+
 
 .pullImage {
     width: 300px;

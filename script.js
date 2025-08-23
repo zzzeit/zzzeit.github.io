@@ -30,6 +30,7 @@ function pull() {
             console.log("S guaranteed");
             sWin();
             pityReset();
+            updateCookies();
             continue;
         }
 
@@ -37,6 +38,7 @@ function pull() {
         if (a_guaranteed >= 10) {
             console.log("A guaranteed");
             aWin();
+            updateCookies();
             continue;
         }
 
@@ -50,10 +52,8 @@ function pull() {
         } else {
             bWin();
         }
+        updateCookies();
     }
-    document.cookie = `pity=${pity}; expires=${expiryDate.toUTCString()}`;
-    document.cookie = `s_guaranteed=${s_guaranteed}; expires=${expiryDate.toUTCString()}`;
-    document.cookie = `a_guaranteed=${a_guaranteed}; expires=${expiryDate.toUTCString()}`;
     updateStats();
 }
 
@@ -109,16 +109,28 @@ function pityReset() {
     s_guaranteed = 0;
 }
 
+function updateCookies() {
+    document.cookie = `pity=${pity}; expires=${expiryDate.toUTCString()}`;
+    document.cookie = `s_guaranteed=${s_guaranteed}; expires=${expiryDate.toUTCString()}`;
+    document.cookie = `a_guaranteed=${a_guaranteed}; expires=${expiryDate.toUTCString()}`;
+}
+
 function updateStats() {
     document.getElementById("pity").innerText = `Pity: ${pity}`;
 }
+
+
 
 
 class Item {
     constructor(name, type) {
         this.type = type;
         this.name = name;
+        this.formattedName = name.slice(2);
+        this.formattedName = this.formattedName.replace(/_/g, " ");
+        this.formattedName = this.formattedName.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
         this.rarity = name.charAt(0);
+        this.pity = getCookie("pity")
     }
 
     appendToHistory() {
@@ -126,6 +138,9 @@ class Item {
         const itemDiv = document.createElement("div");
         itemDiv.style.margin = "10px";
         itemDiv.style.backgroundColor = "rgba(0, 24, 54, 0.178)";
+        itemDiv.style.position = "relative";
+        itemDiv.style.height = "100px";
+
         const img = document.createElement("img");
         if (this.type === "character") {
             img.src = `./resources/characters/${this.name}.png`;
@@ -134,7 +149,19 @@ class Item {
         }
         img.alt = this.name;
         img.width = 100;
+        img.style.position = "absolute";
+        img.style.left = "0";
+
+        const number = document.createElement("p");
+        number.innerText = `#${this.pity}: ${this.formattedName}`;
+        number.style.position = "absolute";
+        number.style.bottom = "0";
+        number.style.left = "110px";
+        number.style.color = "white";
+        number.style.fontSize = "22px";
+
         itemDiv.appendChild(img);
+        itemDiv.appendChild(number);
         historyDiv.appendChild(itemDiv);
     }
 }
@@ -191,6 +218,7 @@ function updateCookie(name, value) {
         console.error(`Cookie with name ${name} does not exist.`);
     }
 }
+
 
 
 console.log(getCookie("pity"));
