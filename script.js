@@ -17,6 +17,9 @@ const a_character = .072
 const b_character = 1 - (s_character + a_character)
 
 let pity = getCookie("pity") || 0;
+let totalSPulls = getCookie("totalSPulls") || 0;
+let wins = getCookie("wins") || 0;
+let average_pity = getCookie("average_pity") || 0;
 let s_guaranteed = getCookie("s_guaranteed") || 0;
 let a_guaranteed = getCookie("a_guaranteed") || 0;
 
@@ -86,10 +89,12 @@ function sWin() {
     if (Math.random() < 0.5) {
         console.log("S winner");
         pullItem("s", "characters");
+        wins++;
     } else {
         console.log("S Loser");
         pullItem("s", "characters");
     }
+    totalSPulls++;
 }
 
 function aWin() {
@@ -111,12 +116,17 @@ function pityReset() {
 
 function updateCookies() {
     document.cookie = `pity=${pity}; expires=${expiryDate.toUTCString()}`;
+    document.cookie = `wins=${wins}; expires=${expiryDate.toUTCString()}`;
+    document.cookie = `average_pity=${average_pity}; expires=${expiryDate.toUTCString()}`;
     document.cookie = `s_guaranteed=${s_guaranteed}; expires=${expiryDate.toUTCString()}`;
     document.cookie = `a_guaranteed=${a_guaranteed}; expires=${expiryDate.toUTCString()}`;
+    document.cookie = `totalSPulls=${totalSPulls}; expires=${expiryDate.toUTCString()}`;
 }
 
 function updateStats() {
     document.getElementById("pity").innerText = `Pity: ${pity}`;
+    const winPercent = totalSPulls > 0 ? ((wins / totalSPulls) * 100).toFixed(2) : "0.00";
+    document.getElementById("wins").innerText = `Wins: ${winPercent}%`;
 }
 
 
