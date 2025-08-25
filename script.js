@@ -157,6 +157,7 @@ class Item {
         itemDiv.style.backgroundColor = "rgba(0, 24, 54, 0.178)";
         itemDiv.style.position = "relative";
         itemDiv.style.height = "100px";
+        itemDiv.style.borderRadius = "13px";
 
         const img = document.createElement("img");
         if (this.type === "character") {
@@ -183,7 +184,29 @@ class Item {
     }
 }
 
-
+function reset() {
+    // Clear all cookies
+    document.cookie.split(";").forEach(function(c) { 
+        document.cookie = c.replace(/^ +/, "").replace(/=.*/, "=;expires=" + new Date().toUTCString() + ";path=/"); 
+    });
+    
+    // Reset all variables to initial state
+    pity = 0;
+    totalSPulls = 0;
+    wins = 0;
+    pity_list = [];
+    average_pity = 0;
+    s_guaranteed = 0;
+    a_guaranteed = 0;
+    
+    // Clear the history display
+    clearHistory();
+    
+    // Update the stats display
+    updateStats();
+    
+    console.log("Game reset - all cookies cleared and stats reset");
+}
 
 
 

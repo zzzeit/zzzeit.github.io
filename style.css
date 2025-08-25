@@ -11,9 +11,18 @@
 
 .history {
     overflow-y: scroll;
-    min-height: 700px;
-    max-height: 1400px;
+    height: 700px;
+    flex-wrap: wrap;
 }
+
+.maindiv {
+    min-width: 780px;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
 
 h1,p {
     color: white;
@@ -33,4 +42,18 @@ h1,p {
 .pullImage:hover {
     transform: translateY(-50%) scale(1.1);
     transform-origin: center;
+}
+
+.resetbtn {
+    position: fixed;
+    bottom: 10px;
+    width: 100px;
+    right: 20px;
+}
+
+.resetbtn:hover {
+    transform: scale(1.1);
+    transform-origin: center;
+    cursor: pointer;
+    transition: transform 0.3s ease;
 }
